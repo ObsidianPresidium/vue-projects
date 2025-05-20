@@ -103,7 +103,7 @@
     document.addEventListener("mouseup", stopTrack);
 
     watch(mouseX, (_mouseX) => {
-        elDeleter.value.style.opacity = Math.max(Math.min(((mouseX.value + 100 - (initMouseX - 200)) / 200) * -1 + 1, 1), 0) / 2;
+        elDeleter.value.style.opacity = Math.max(Math.min(((mouseX.value - (initMouseX - 200)) / 175) * -1 + 1, 1), 0) / 2;
         activateDeletion = false;
         if (mouseX.value <= initMouseX - 200) {
             elDeleter.value.style.opacity = 1;
@@ -169,7 +169,7 @@
     }
 
     .delete-item {
-        /* display: none */
+        display: none;
         background-image: linear-gradient(to right, #ff4857 80%, transparent 100%);
         border-radius: 25% 0 0 25%;
         padding: 0.25rem;
